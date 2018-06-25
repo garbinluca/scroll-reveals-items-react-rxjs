@@ -4,6 +4,6 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 [Demo link](https://www.lucagarbin.it/lab/scroll-reveals-items-react-rxjs/)
 
 * `yarn install`
-* `yarn run dev`
+* `yarn run start`
 
 

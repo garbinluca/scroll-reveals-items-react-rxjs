@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 
 import PropTypes from 'prop-types';
 
-import scrollViewRx from '../ScrollView/ScrollViewRx.js';
+import ScrollViewService from '../ScrollView/ScrollViewService.js';
 
 class ScrollView extends Component {
 
@@ -28,15 +28,15 @@ class ScrollView extends Component {
 		if (this.scrollObserver !== undefined) return;
 
 		this.getBoundingClientRect();
-		this.scrollObserver = scrollViewRx.listenScroll(this.handleScroll);
-		this.resizeObserver = scrollViewRx.listenResize(this.handleResize);
+		this.scrollObserver = ScrollViewService.listenScroll(this.handleScroll);
+		this.resizeObserver = ScrollViewService.listenResize(this.handleResize);
 
 	}
 
 	componentWillUnmount() {
 
-		scrollViewRx.remove(this.scrollObserver);
-		scrollViewRx.remove(this.resizeObserver);
+		ScrollViewService.remove(this.scrollObserver);
+		ScrollViewService.remove(this.resizeObserver);
 
 	}
 
@@ -44,11 +44,11 @@ class ScrollView extends Component {
 
 		if (!this.props.continuos) {
 			if (!prevState.viewed && this.state.viewed) {
-				scrollViewRx.remove(this.scrollObserver);
-				scrollViewRx.remove(this.resizeObserver);
+				ScrollViewService.remove(this.scrollObserver);
+				ScrollViewService.remove(this.resizeObserver);
 			} else if (prevState.viewed && !this.state.viewed) {
-				scrollViewRx.listenScroll(this.scrollObserver);
-				scrollViewRx.listenResize(this.resizeObserver);
+				ScrollViewService.listenScroll(this.scrollObserver);
+				ScrollViewService.listenResize(this.resizeObserver);
 			}
 		}
 
@@ -67,7 +67,7 @@ class ScrollView extends Component {
 			this.setState({
 				viewed: false
 			});
-			scrollViewRx.listenScroll(this.handleScroll);
+			ScrollViewService.listenScroll(this.handleScroll);
 		}
 		this.getBoundingClientRect();
 

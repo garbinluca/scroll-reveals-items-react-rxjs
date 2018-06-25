@@ -7,7 +7,7 @@
 import { Subject, Observable } from 'rxjs';
 import { map, merge, publishReplay, refCount, tap } from 'rxjs/operators';
 
-class ScrollViewRx {
+class ScrollViewService {
 
 	resize$ = new Subject();
 	scroll$ = new Subject();
@@ -66,4 +66,4 @@ class ScrollViewRx {
 
 }
 
-export default new ScrollViewRx();
+export default new ScrollViewService();

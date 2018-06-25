@@ -2,8 +2,8 @@ import React, { Component } from 'react';
 import { debounce } from 'lodash';
 
 import ScrollView from '../ScrollView';
+import ScrollViewService from '../ScrollView/ScrollViewService.js';
 import DemoComponent from '../DemoComponent';
-import scrollViewRx from '../ScrollView/ScrollViewRx.js';
 
 class Page extends Component {
 
@@ -11,7 +11,7 @@ class Page extends Component {
 
 		window.addEventListener('scroll', () => {
 
-			scrollViewRx.onScroll({
+			ScrollViewService.onScroll({
 				direction: 'y',
 				x: window.pageXOffset,
 				y: window.pageYOffset
@@ -21,13 +21,12 @@ class Page extends Component {
 
 		window.addEventListener('resize', debounce(() => {
 
-			console.log('resize');
-			scrollViewRx.onResize({
+			ScrollViewService.onResize({
 				width: window.innerWidth,
 				height: window.innerHeight
 			});
 
-			scrollViewRx.onScroll({
+			ScrollViewService.onScroll({
 				direction: 'y',
 				x: window.pageXOffset,
 				y: window.pageYOffset
@@ -35,7 +34,7 @@ class Page extends Component {
 
 		}, 200));
 
-		scrollViewRx.onScroll({
+		ScrollViewService.onScroll({
 			direction: 'y',
 			x: window.pageXOffset,
 			y: window.pageYOffset
