@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import { debounce } from 'lodash';
 
-import ScrollView from '../ScrollView';
-import ScrollViewService from '../ScrollView/ScrollViewService.js';
-import DemoComponent from '../DemoComponent';
+import ScrollView from './ScrollView';
+import ScrollViewService from './ScrollView/ScrollViewService.js';
+import DemoComponent from './DemoComponent';
 
 class Page extends Component {
 

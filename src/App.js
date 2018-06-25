@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-import Page from './Page';
+import PageSmoothScrollbar from './PageSmoothScrollbar.js';
 
 import './App.css';
 
@@ -15,7 +15,7 @@ class App extends Component {
     render() {
         return (
             <div className="App">
-                <Page />
+                <PageSmoothScrollbar />
             </div>
         );
     }
